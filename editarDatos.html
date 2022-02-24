@@ -29,9 +29,26 @@
     </div>
 
     <!--Formulario para consultar los datos, insertar, etc.-->
-    <div id="indexPrincipal">
-        <p>Mark-Edit es una herramienta para controlar las notas de tus alumnos</p>
-        <p>Puedes insertar notas, eliminarlas, consultarlas y modificarlas</p>
+    <div id="indexEditar">
+        <form action="" method="post">
+            <fieldset>
+                <legend>Nombre del alumno</legend>
+                <input type="text" name="nombreAlumno">
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>Datos nuevos</legend>
+                <label>Nombre <input type="text" name="nuevoNombre"></label>
+                <br>
+                <br>
+                <label>Apellidos <input type="text" name="nuevoApellidos"></label>
+                <br>
+                <br>
+                <label>Nota <input type="number" name="nuevoNota"></label>                
+            </fieldset>
+            <br>
+            <input id="enviar" type="submit" name="Enviar" value="Enviar">
+        </form>
     </div>
 </body>
 </html>
