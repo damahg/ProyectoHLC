@@ -1,14 +1,21 @@
 body{
-    background-color: #e6d4a5;
+    background-color: #bab199;
+    margin: 0;
 }
 
 #generalArriba{
     display:flex;
-    width: auto;
+    width: 100%;
     padding: 0;
     margin: 0;
     background-color: #e6d4a5;
   }
+
+#generalArriba .logo{
+    float: right;
+    padding-left: 50px;
+}
+
 
 #generalArriba .logo a{
     color: black;
@@ -32,31 +39,40 @@ body{
 }
 
 .clear{
-clear: both;
+    clear: both;
 }
 
 #NavBar {
-margin-top: 0;
-width: auto;
-text-align: center;
-border-top: 1px solid gray;
-border-bottom: 1px solid gray;
+    margin-top: 0;
+    width: auto;
+    text-align: center;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    background-color: #bfb18a;
 }
 
 #NavBar ul li{
-display: inline-block;
-list-style: none;
-padding: 0 20px 0 20px;
+    display: inline-block;
+    list-style: none;
+    padding: 0 20px 0 20px;
 }
 
 #NavBar ul li a {
-padding: 15px;
-text-decoration: none;
-color: black;
+    padding: 15px;
+    text-decoration: none;
+    color: black;
 }
 
 #NavBar ul li a:hover {
-background-color: #5a5a5a;
-text-decoration: none;
-color: white;
+    background-color: #5a5a5a;
+    text-decoration: none;
+    color: white;
 }
+
+#indexPrincipal{
+    margin-top: 200px;
+    text-align: center;
+    color: black;
+    font-size: 30px;
+    background-color: #bab199;
+  }
