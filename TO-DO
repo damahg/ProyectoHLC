@@ -12,9 +12,3 @@ https://material.io/design/color/dark-theme.html#anatomy
 -Seguramente haya que hacer cambios en como se muestran las cosas despues de enviar los formularios. Para eso cambiar la id del div en el php y modificar en el cosas
 -Como acceso a la bd he puesto root sin contraseña, para no tener que estar creando usuarios y demás historias
 
-
-
--Hechos los php menos el de editar, falta conectar con BD
--Iconos para cambiar entre modo claro y oscuro, a falta de las funciones
--Iconos para formularios (check y X)(botones submit y reset)
--Formulario Login
