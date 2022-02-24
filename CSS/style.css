@@ -38,6 +38,12 @@ body{
     font-size: 15px;
 }
 
+#generalArriba .login img{
+    padding-left: 10px;
+    width: 15px;
+}
+
+
 .clear{
     clear: both;
 }
@@ -91,9 +97,25 @@ body{
 }
 
 #indexEditar form input{
-    width:100%;
+    width: 95%;
+    margin-right: 10px 10px 10px 10px;
 }
   
-#enviar{
+#indexEditar form #enviar{
+    position: relative;
+    background: url('../resources/icons/check.svg') no-repeat center;
+    background-color: white;
     border-radius: 55px;
+    width: 50%;
+    left: auto;
+    float: left;
+}
+
+#indexEditar form #resetear{
+    position: relative;
+    background: url('../resources/icons/x.svg') no-repeat center;
+    background-color: white;
+    border-radius: 55px;
+    width: 50%;
+    right: auto;
 }

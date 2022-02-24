@@ -12,13 +12,10 @@
             <a href="index.html"> <h3>Mark-Edit</h3> </a>
         </div>
         <div class="login">
-            <a href="Login.html">Login</a>
-            <img src="resources/icons/luna.svg" onclick="cambiarModoOscuro">
-            <img src="resources/icons/sol.svg" onclick="cambiarModoOscuro">
+          <a href="Login.html">Login</a>
         </div>
     </div>
 
-    
 
     <!--NAVBAR-->
     <div id="NavBar">
@@ -32,7 +29,30 @@
 
     <!--Formulario para consultar los datos, insertar, etc.-->
     <div id="indexPrincipal">
+        <?php
+        $id = filter_input(INPUT_POST, "id");
+        //Servidor
+        $server="localhost";
+        //BD
+        $database = "";
+        $user = "root";
+        $pass ="";
         
+        //Conexion
+        $conn = mysqli_connect($server,$user,$pass,$database);
+        
+        if(!$conn){
+            die("La conexion falló: " . mysqli_connect_error());
+        }else{
+            echo 'Fila borrada';
+            $consulta = "DELETE FROM alumno WHERE id = '$id'";
+            $alumno = $conn->query($consulta);
+
+            echo "Registro borrado"
+        }
+        
+        mysqli_close($conn);
+        ?>
     </div>
 </body>
 </html>

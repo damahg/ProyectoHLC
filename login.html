@@ -1,57 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css">
     <title>Mark-Edit</title>
 </head>
-<body>
+
+<body id="body">
+    <script src="JS/script.js"></script>
     <!--Logo y cambiar a modo claro / oscuro-->
     <div id="generalArriba">
         <div class="logo">
-            <a href="index.html"> <h3>Mark-Edit</h3> </a>
+            <a href="index.html">
+                <h3>Mark-Edit</h3>
+            </a>
         </div>
         <div class="login">
             <a href="Login.html">Login</a>
             <img src="resources/icons/luna.svg" onclick="cambiarModoOscuro">
             <img src="resources/icons/sol.svg" onclick="cambiarModoOscuro">
+
         </div>
     </div>
 
-    
 
     <!--NAVBAR-->
     <div id="NavBar">
         <ul>
-           <li><a href="insertarDatos.html">Insertar datos</a></li> 
-           <li><a href="consultarDatos.html">Consultar datos</a></li>
-           <li><a href="eliminarDatos.html">Eliminar datos</a></li>
-           <li><a href="editarDatos.html">Editar datos</a></li>
+            <li><a href="insertarDatos.html">Insertar datos</a></li>
+            <li><a href="consultarDatos.html">Consultar datos</a></li>
+            <li><a href="eliminarDatos.html">Eliminar datos</a></li>
+            <li><a href="editarDatos.html">Editar datos</a></li>
         </ul>
     </div>
 
     <!--Formulario para consultar los datos, insertar, etc.-->
     <div id="indexEditar">
         <form action="" method="post">
-            <fieldset>
-                <legend>Nombre del alumno</legend>
-                <input type="text" name="nombreAlumno">
-            </fieldset>
+            <label>Usuario<input type="text" name="usuario"></label>
             <br>
-            <fieldset>
-                <legend>Datos nuevos</legend>
-                <label>Nombre <input type="text" name="nuevoNombre"></label>
-                <br>
-                <br>
-                <label>Apellidos <input type="text" name="nuevoApellidos"></label>
-                <br>
-                <br>
-                <label>Nota <input type="number" name="nuevoNota"></label>                
-            </fieldset>
+            <br>
+            <label>Contraseña<input type="text" name="contrasenna"></label>
+            <br>
             <br>
             <input id="enviar" type="submit" name="Enviar" value="">
             <input id="resetear" type="reset" name="Resetear" value="">
         </form>
     </div>
 </body>
+
 </html>
