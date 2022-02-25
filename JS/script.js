@@ -1,4 +1,5 @@
-var icono = document.getElementById('logo');
+var icono = document.getElementById('cambiarModo');
+var fondo = document.getElementById("myBody");
 
 function cambiarModoOscuro(){
     //Cambiar a modo oscuro
