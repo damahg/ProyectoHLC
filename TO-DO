@@ -12,3 +12,10 @@ https://material.io/design/color/dark-theme.html#anatomy
 -Seguramente haya que hacer cambios en como se muestran las cosas despues de enviar los formularios. Para eso cambiar la id del div en el php y modificar en el cosas
 -Como acceso a la bd he puesto root sin contraseña, para no tener que estar creando usuarios y demás historias
 
+@Fran
+
+- He modificado el acceso a la base de datos. 
+- He creado dos tablas, una para el login de los profesores y otro para el registro de los usuarios.
+- Me queda el JavaScript
+- Si alguien puede hacer la consulta y eliminacion de datos de php lo agradeceria. 
+
