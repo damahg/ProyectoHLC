@@ -1,5 +1,5 @@
 body{
-    background-color: #bab199;
+    background-color: #FFF8DC;
     margin: 0;
 }
 
@@ -78,9 +78,8 @@ body{
 #indexPrincipal{
     margin-top: 200px;
     text-align: center;
-    color: black;
     font-size: 30px;
-    background-color: #bab199;
+    
 }
 
 #indexEditar{
