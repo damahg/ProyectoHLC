@@ -1,65 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Mark-Edit</title>
-</head>
-<body>
-    <!--Logo y cambiar a modo claro / oscuro-->
-    <div id="generalArriba">
-        <div class="logo">
-            <a href="index.html"> <h3>Mark-Edit</h3> </a>
-        </div>
-        <div class="login">
-          <a href="Login.html">Login</a>
-        </div>
-    </div>
-
-
-    <!--NAVBAR-->
-    <div id="NavBar">
-        <ul>
-           <li><a href="insertarDatos.html">Insertar datos</a></li> 
-           <li><a href="consultarDatos.html">Consultar datos</a></li>
-           <li><a href="eliminarDatos.html">Eliminar datos</a></li>
-           <li><a href="editarDatos.html">Editar datos</a></li>
-        </ul>
-    </div>
-
-    <!--Formulario para consultar los datos, insertar, etc.-->
-    <div id="indexPrincipal">
-        <h1>Consulta: </h1>
-        <?php  
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edit this template
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <?php
+        //Datos
+        $IDProfesor= filter_input(INPUT_POST, "IDProfesor");
+        $nombre = filter_input(INPUT_POST, "nombre");
+        $apellido1 = filter_input(INPUT_POST, "apellido1");
+        $apellido2 = filter_input(INPUT_POST, "apellido2");
+        $curso = filter_input(INPUT_POST, "curso");
+        $nota = filter_input(INPUT_POST, "nota");
+        
         //Servidor
-        $server="localhost";
-        //BD
-        $database = "";
-        $user = "root";
-        $pass ="";
-        
-        //Conexion
-        $conn = mysqli_connect($server,$user,$pass,$database);
-        
-        if(!$conn){
-            die("La conexion falló: " . mysqli_connect_error());
+        $servername = "localhost";
+        //Nombre de la base de datos
+        $database = "webNotas";
+        //Credenciales de la base de datos
+        $username = "franvilla";
+        $password = "franvilla10";
+        //Conexion con la base de datos --> mysqli
+        $conn = mysqli_connect($servername, $username, $password, $database);
+        //Comprobacion de la conexion
+        if (!$conn) {
+            die ("La conexión falló: " .mysqli_connect_error());
         }else{
-            $consulta = "SELECT * FROM alumno";
-            $alumno = $conn->query($consulta);
-            $num_fil = $alumno->num_rows;
-            
-            echo "ID" . " - " . "Nombre" .  " - " . "Apellidos" . " - " . "Curso" . " - " . "Nota" . "<br>";
-            
-            while ($fila = $alumno->fetch_array()){
-                echo $fila[0] . " - " . $fila[1] .  " - " . $fila[2] . " - " . $fila[3] . " - " . $fila[4] . "<br>";
-            }
-            echo '<br>';
-            echo 'El numero de alumnos es: ' . $num_fil;
-            $alumno -> free();
+            echo "Conectado correctamente";
+        }
+       
+        echo "<br>";
+        
+        $sql = "INSERT INTO alumno (IDProfesor, nombreAlumno, apellido1Alumno, apellido2Alumno, curso, nota) VALUES ('$IDProfesor','$nombre', '$apellido1','$apellido2','$curso', '$nota')";
+        
+                
+        if(mysqli_query($conn, $sql)){
+            echo "Datos introducidos correctamente";
+        }else{
+            echo "Error: " . $sql . "<br>" . mysql_error($conn);
         }
         
         mysqli_close($conn);
         ?>
     </div>
-</body>
+    </body>
 </html>
