@@ -3,7 +3,7 @@
     var fondo = document.getElementById("myBody");
 
 
-    function cambiarColorOscuro (){
+    function cambiarColorOscuro(){
         fondo.style.backgroundColor = "black"
     }
 
