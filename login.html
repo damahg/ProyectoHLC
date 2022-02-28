@@ -8,6 +8,20 @@
 </head>
 <script src="/JS/script.jss"></script>
 <body id ="myBody">
+    <!--JS-->
+    <script>
+        function Letras(string){//solo letras
+        var out = '';
+        //Se añaden las letras validas
+        var filtro = 'abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ';//Caracteres validos
+
+        for (var i=0; i<string.length; i++)
+            if (filtro.indexOf(string.charAt(i)) != -1) 
+            out += string.charAt(i);
+        return out;
+        } 
+    </script>
+
     
     <!--Logo y cambiar a modo claro / oscuro-->
     <div id="generalArriba">
@@ -38,7 +52,7 @@
     <!--Formulario para consultar los datos, insertar, etc.-->
     <div id="indexEditar">
         <form action="" method="post">
-            <label>Usuario<input type="text" name="usuario" required></label>
+            <label>Usuario<input type="text" name="usuario" onkeyup="this.value=Letras(this.value)" required></label>
             <br>
             <br>
             <label>Contraseña<input type="text" name="contrasenna" required></label>

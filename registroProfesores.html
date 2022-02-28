@@ -6,7 +6,20 @@
     <title>Mark-Edit</title>
 </head>
 <body id ="myBody">
+
     <script src="JS/script.js"></script>
+    <script>
+            function Letras(string){//solo letras
+            var out = '';
+            //Se añaden las letras validas
+            var filtro = 'abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ';//Caracteres validos
+    
+            for (var i=0; i<string.length; i++)
+                if (filtro.indexOf(string.charAt(i)) != -1) 
+                out += string.charAt(i);
+            return out;
+            } 
+    </script>
     <div id="generalArriba">
         <div class="logo">
             <a href="index.html"> <h3>Mark-Edit</h3> </a>
@@ -34,10 +47,10 @@
     <div id="indexPrincipal">
         
         <form method="post" action="registroProfesor.php">
-            <p>Nombre: <input type="text" name="nombre">
-            <p>Primer apellido: <input type="text" name="apellido1">
-            <p>Segundo apellido <input type="text" name="apellido2">
-            <p> Contraseña:   <input type="text" name="pass">
+            <p>Nombre: <input type="text" name="nombre" onkeyup="this.value=Letras(this.value)" required>
+            <p>Primer apellido: <input type="text" name="apellido1" onkeyup="this.value=Letras(this.value)" required>
+            <p>Segundo apellido <input type="text" name="apellido2" onkeyup="this.value=Letras(this.value)" required>
+            <p> Contraseña:   <input type="text" name="pass" required>
             <p><input type="submit" value="enviar">
 	</form>
         
