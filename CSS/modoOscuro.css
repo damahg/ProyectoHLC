@@ -1,0 +1,121 @@
+body{
+    background-color: #7d84b2;
+    margin: 0;
+}
+
+#generalArriba{
+    display:flex;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: black;
+    color: white;
+  }
+
+#generalArriba .logo{
+    float: right;
+    padding-left: 50px;
+}
+
+
+#generalArriba .logo a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+#generalArriba .login{
+    float: right;
+    margin-left: auto;
+    margin-right: 50px;
+    margin-top: 5px;
+    padding-top: 20px;
+    padding-bottom: auto;
+}
+
+#generalArriba .login a{
+    color: black;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+#generalArriba .login img{
+    padding-left: 10px;
+    width: 15px;
+}
+
+
+.clear{
+    clear: both;
+}
+
+#NavBar {
+    margin-top: 0;
+    width: auto;
+    text-align: center;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    background-color: #7d84b2;
+}
+
+#NavBar ul li{
+    display: inline-block;
+    list-style: none;
+    padding: 0 20px 0 20px;
+}
+
+#NavBar ul li a {
+    padding: 15px;
+    text-decoration: none;
+    color: white;
+}
+
+#NavBar ul li a:hover {
+    background-color: #5a5a5a;
+    text-decoration: none;
+    color: white;
+}
+
+#indexPrincipal{
+    margin-top: 200px;
+    text-align: center;
+    font-size: 30px;
+    
+}
+
+#indexEditar{
+    background-color: #7d84b2;
+    margin-top: 100px;
+    color: white;
+    margin-left: auto;
+    margin-right:auto;
+    width: 20%;
+}
+  
+#indexEditar form{
+    padding: 10px;
+}
+
+#indexEditar form input{
+    width: 95%;
+    margin-right: 10px 10px 10px 10px;
+}
+  
+#indexEditar form #enviar{
+    position: relative;
+    background: url('../resources/icons/check.svg') no-repeat center;
+    background-color: white;
+    border-radius: 55px;
+    width: 50%;
+    left: auto;
+    float: left;
+}
+
+#indexEditar form #resetear{
+    position: relative;
+    background: url('../resources/icons/x.svg') no-repeat center;
+    background-color: white;
+    border-radius: 55px;
+    width: 50%;
+    right: auto;
+}

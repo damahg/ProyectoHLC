@@ -17,5 +17,5 @@ https://material.io/design/color/dark-theme.html#anatomy
 - He modificado el acceso a la base de datos. 
 - He creado dos tablas, una para el login de los profesores y otro para el registro de los usuarios.
 - Si alguien puede hacer la consulta y eliminacion de datos de php lo agradeceria. Esta puesto la conexión a la base datos en todos lo php 
-- Terminada la parte de javascript. Quedaria meter el modo oscuro completo, que no consigo hacer que funcione con el archivo externo. No he metido la validacion de usuarios
+- Terminada la parte de javascript. No he metido la validacion de usuarios. Falta coger los colores tanto del modo oscuro como el de la web.
 

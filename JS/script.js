@@ -1,15 +1,16 @@
-<script type="text/javascript">
-    
-    var fondo = document.getElementById("myBody");
+
+
+    let theme = document.getElementById("theme");
 
 
     function cambiarColorOscuro(){
-        fondo.style.backgroundColor = "black"
+        theme.href = "css/modoOscuro.css"
     }
 
     function cambiarColorClaro(){
-        fondo.style.backgroundColor = "white"
+        theme.href= "css/style.css"
     }
 
 
-</script>
+
+
