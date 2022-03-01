@@ -1,5 +1,5 @@
 body{
-    background-color: #7d84b2;
+    background-color: #2D2926;
     margin: 0;
 }
 
@@ -8,7 +8,7 @@ body{
     width: 100%;
     padding: 0;
     margin: 0;
-    background-color: black;
+    background-color: #8f8f8f;
     color: white;
   }
 
@@ -55,7 +55,7 @@ body{
     text-align: center;
     border-top: 1px solid gray;
     border-bottom: 1px solid gray;
-    background-color: #7d84b2;
+    background-color: #6F6A67;
 }
 
 #NavBar ul li{
@@ -71,7 +71,7 @@ body{
 }
 
 #NavBar ul li a:hover {
-    background-color: #5a5a5a;
+    background-color: #484848;
     text-decoration: none;
     color: white;
 }
@@ -80,8 +80,25 @@ body{
     margin-top: 200px;
     text-align: center;
     font-size: 30px;
-    
+    color: white;
 }
+
+#indexPrincipal button{
+    width: 50%;
+    padding: 20px;
+    border: 0px solid;
+    background-color: #CF6679;
+}
+#indexPrincipal button:hover{
+    background-color: #B00020;
+}
+
+#indexPrincipal a button{
+    cursor: pointer;
+    font-size: large;
+    color: black;
+}
+
 
 #indexEditar{
     background-color: #7d84b2;

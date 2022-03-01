@@ -3,13 +3,9 @@
 
 
     function cambiarColorOscuro(){
-        theme.href = "css/modoOscuro.css"
+        theme.href = "../css/modoOscuro.css"
     }
 
     function cambiarColorClaro(){
-        theme.href= "css/style.css"
+        theme.href= "../css/style.css"
     }
-
-
-
-

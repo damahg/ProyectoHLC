@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" id="theme">
     <title>Mark-Edit</title>
 </head>
 <body id ="myBody">
@@ -46,7 +46,7 @@
     <!--Formulario para consultar los datos, insertar, etc.-->
     <div id="indexPrincipal">
         
-        <form method="post" action="registroProfesor.php">
+        <form method="post" action="PHP/registroProfesor.php">
             <p>Nombre: <input type="text" name="nombre" onkeyup="this.value=Letras(this.value)" required>
             <p>Primer apellido: <input type="text" name="apellido1" onkeyup="this.value=Letras(this.value)" required>
             <p>Segundo apellido <input type="text" name="apellido2" onkeyup="this.value=Letras(this.value)" required>

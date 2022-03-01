@@ -82,6 +82,24 @@ body{
     
 }
 
+#indexPrincipal button{
+    width: 50%;
+    padding: 20px;
+    border: 0px solid;
+    background-color: #03dac6;
+}
+
+#indexPrincipal button:hover{
+    background-color: #018786;
+}
+
+#indexPrincipal a button{
+    cursor: pointer;
+    font-size: large;
+    color: #121212;
+    text-decoration: none;
+}
+
 #indexEditar{
     background-color: #666666;
     margin-top: 100px;

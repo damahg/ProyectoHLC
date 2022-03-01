@@ -2,21 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" id="theme">
     <title>Mark-Edit</title>
 </head>
 <body id ="myBody">
     <script src="JS/script.js"></script>
-
     <!--Logo y cambiar a modo claro / oscuro-->
     <div id="generalArriba">
         <div class="logo">
-            <a href="index.html"> <h3>Mark-Edit</h3> </a>
+            <a href="index.html">
+                <h3>Mark-Edit</h3>
+            </a>
         </div>
         <div class="login">
-            <a href="Login.html">Login</a>
-            <img src="resources/icons/luna.svg" onclick="cambiarModoOscuro">
-            <img src="resources/icons/sol.svg" onclick="cambiarModoOscuro">
+            <a href="login.html">Login</a>
+    
+            <img src="resources/icons/luna.svg" onclick="cambiarColorOscuro()">
+            <img src="resources/icons/sol.svg" onclick="cambiarColorClaro()">
+    
         </div>
     </div>
 
