@@ -62,7 +62,7 @@
        
         echo "<br>";
         
-        $sql = "DELETE FROM alumno WHERE nombre = '$nombre'";
+        $sql = "DELETE FROM alumno WHERE nombre = '$nombre' AND apellido1Alumno = '$apellido1' AND apellido2Alumno = '$apellido2'";
         
                 
         if(mysqli_query($conn, $sql)){
