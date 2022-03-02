@@ -12,7 +12,7 @@
     <!--Logo y cambiar a modo claro / oscuro-->
     <div id="generalArriba">
         <div class="logo">
-            <a href="../index.html">
+            <a href="index.html">
                 <h3>Mark-Edit</h3>
             </a>
         </div>
@@ -61,7 +61,7 @@
         if (!$conn) {
             die("La conexión falló: " . mysqli_connect_error());
         } else {
-            echo "Tus alumnos son: ";
+            echo "Tus alumnos son:";
         }
 
         echo "<br>";
@@ -71,7 +71,7 @@
         $num_reg = $alumno->num_rows;
 
         while ($fila = $alumno->fetch_array()) {
-        echo "Nombre y apellidos: " . $fila[2] . " " . $fila[3] . " " . $fila[4] . " Asignatura: " . $fila[5] . " Nota: " . $fila[6]. "<br>";
+        echo "Nº ".$fila[0]." Nombre y apellidos: " . $fila[2] . " " . $fila[3] . " " . $fila[4] . " Asignatura: " . $fila[5] . " Nota: " . $fila[6]. "<br>";
         }
    
         echo "<br>" . "El número de alumnos es: " . $num_reg;

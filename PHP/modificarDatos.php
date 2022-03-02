@@ -37,13 +37,13 @@
     <div id="indexPrincipal">
         <?php
         //Datos
-        $IDProfesor= filter_input(INPUT_POST, "IDAlumno");
+        $IDAlumno= filter_input(INPUT_POST, "IDAlumno");
         $nombre = filter_input(INPUT_POST, "nombre");
-        $apellido1 = filter_input(INPUT_POST, "nuevoPrimerApellido");
-        $apellido2 = filter_input(INPUT_POST, "nuevoSegundoApellido");
+        $apellido1 = filter_input(INPUT_POST, "apellido1");
+        $apellido2 = filter_input(INPUT_POST, "apellido2");
         $curso = filter_input(INPUT_POST, "curso");
-        $nota = filter_input(INPUT_POST, "nuevaNota");
-        $id = filter_input(INPUT_POST, "idAlumno");
+        $nota = filter_input(INPUT_POST, "nota");
+      
         
         //Servidor
         $servername = "localhost";
@@ -59,9 +59,8 @@
             die ("La conexión falló: " .mysqli_connect_error());
         }
         if (!empty($nombre)) {
-            $sql = "UPDATE alumno SET nombre='$nombre' WHERE IDAlumno='$IDAlumno'";
-            echo "Nombre modificado dentro del primer if".'<br>';
-            echo $sql;
+            $sql = "UPDATE alumno SET nombreAlumno='$nombre' WHERE IDAlumno='$IDAlumno'";
+            
             if (mysqli_query($conn, $sql)) {
               echo "Nombre modificado".'<br>';
             } else {
@@ -69,7 +68,7 @@
             }
           } 
           if (!empty($apellido1)) {
-            $sql = "UPDATE alumno SET apellidos='$apellido1' WHERE IDAlumno='$IDAlumno'";
+            $sql = "UPDATE alumno SET apellido1Alumno='$apellido1' WHERE IDAlumno='$IDAlumno'";
             
             if (mysqli_query($conn, $sql)) {
               echo "Apellido modificado".'<br>';
@@ -78,7 +77,7 @@
             }
           }
           if (!empty($apellido2)) {
-            $sql = "UPDATE alumno SET apellidos='$apellido2' WHERE IDAlumno='$IDAlumno'";
+            $sql = "UPDATE alumno SET apellido2Alumno='$apellido2' WHERE IDAlumno='$IDAlumno'";
             
             if (mysqli_query($conn, $sql)) {
               echo "Apellido modificado".'<br>';
@@ -87,29 +86,21 @@
             }
           } 
           if (!empty($curso)) {
-            $sql = "UPDATE alumno SET estudios='$curso' WHERE IDAlumno='$IDAlumno';";
+            $sql = "UPDATE alumno SET curso='$curso' WHERE IDAlumno='$IDAlumno'";
             if (mysqli_query($conn, $sql)) {
-              echo "Estudios modificados".'<br>';
+              echo "Asignatura modificados".'<br>';
             } else {
               echo "Error al realizar la modificación de la asignatura: " . mysqli_error($conn).'<br>';
             }
           } 
           if (!empty($nota)) {
-            $sql = "UPDATE alumno SET nota='$nota' WHERE IDAlumno='$IDAlumno';";
+            $sql = "UPDATE alumno SET nota='$nota' WHERE IDAlumno='$IDAlumno'";
             if (mysqli_query($conn, $sql)) {
               echo "Nota modificada".'<br>';
             } else {
               echo "Error al realizar la modificación de la nota: " . mysqli_error($conn);
             }
           } 
-      
-        if (mysqli_query($conexion, $sqlUpdate)) {
-            echo "Registro actualizado con éxito";
-            echo "</br>";
-        } else {
-            echo "Error: " . $sqlUpdate . "</br>" . mysqli_error($conexion);
-            echo "</br>";
-        }
         mysqli_close($conn);
         ?>
     </div>
