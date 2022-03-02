@@ -101,7 +101,8 @@ body{
 }
 
 #indexPrincipal table{
-    border: 40px solid white;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #indexEditar{
