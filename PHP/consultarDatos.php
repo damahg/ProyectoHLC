@@ -45,21 +45,19 @@
                 <th>NOTAS</th>
             </tr>
             <?php
-            // Conectamos con la base de datos
-            $servername = "localhost";
-
-            $database = "datos_curso_21/22";
-
-            $username = "irene";
-            $password = "1R3n3_2@*()";
-
-            // establecemos la conexión con la base de datos
-            $conexion = mysqli_connect($servername, $username, $password, $database);
-
-            // comprobamos que la conexión se ha realizado con éxito
-            if (!$conexion) {
-                die("La conexión falló" . mysqli_connect_error());
-            } else {
+       //Servidor
+       $servername = "localhost";
+       //Nombre de la base de datos
+       $database = "webNotas";
+       //Credenciales de la base de datos
+       $username = "franvilla";
+       $password = "franvilla10";
+       //Conexion con la base de datos --> mysqli
+       $conn = mysqli_connect($servername, $username, $password, $database);
+       //Comprobacion de la conexion
+       if (!$conn) {
+           die ("La conexión falló: " .mysqli_connect_error());
+       } else {
                 // Sacamos todos los datos almacenados en la base de datos
                 $consulta = "SELECT * FROM alumno";
                 // se llama a la funcion query() para pasarle los datos de la base de datos y realizar la consulta
