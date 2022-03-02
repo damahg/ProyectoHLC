@@ -81,6 +81,9 @@
         $alumno->free();
         echo"<table>";
             echo"<tr>";
+                echo"<td>";
+                echo"hola";
+                echo"</td>";
             echo"</tr>";
         echo"</table>";
 
@@ -89,7 +92,7 @@
         ?>
         
 
-        <form method="post" action="./index.html">
+        <form method="post" action="../index.html">
             </br>
             <input type="submit" value="Volver inicio">
         </form>
