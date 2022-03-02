@@ -35,6 +35,9 @@
 
     <!--Formulario para consultar los datos, insertar, etc.-->
     <div id="indexPrincipal">
+        
+
+        <textarea name="" id="" cols="30" rows="10">
         <?php
         //Datos
         $IDProfesor= filter_input(INPUT_POST, "IDProfesor");
@@ -72,6 +75,7 @@
         $alumno -> free();
         mysqli_close($conn);
         ?>
+        </textarea>
     </div>
 </body>
 </html>
