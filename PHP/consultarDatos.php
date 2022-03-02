@@ -80,6 +80,8 @@
         //Buena practica programación --> Borrar la consulta
         $alumno->free();
         echo"<table>";
+            echo"<tr>";
+            echo"</tr>";
         echo"</table>";
 
         //Buena práctica de programación cerrar la conexión con la mysqli_close()
@@ -87,7 +89,7 @@
         ?>
         
 
-        <form method="post" action="index.html">
+        <form method="post" action="./index.html">
             </br>
             <input type="submit" value="Volver inicio">
         </form>
