@@ -70,21 +70,47 @@
         $alumno = $conn->query($consulta);
         $num_reg = $alumno->num_rows;
 
-        echo "Numero de alumno -" . "- Nombre -" . "- Apellido1 -". "- Apellido2 -". "- Estudios -" . "- Nota " . "<br>";
-        echo "<br>";
-        while ($fila = $alumno->fetch_array()) {
-
-            echo $fila[0] . " - " . $fila[2] . " - " . $fila[3] . " - " . $fila[4] . " - " . $fila[5] . " - " . $fila[6]. "<br>";
-        }
+        
         echo "<br>" . "El número de alumnos es: " . $num_reg;
         //Buena practica programación --> Borrar la consulta
         $alumno->free();
         echo"<table>";
+            echo "Numero de alumno -" . "- Nombre -" . "- Apellido1 -". "- Apellido2 -". "- Estudios -" . "- Nota " . "<br>";
+            echo "<br>";
+            while ($fila = $alumno->fetch_array()) {
+                echo"<tr>";
+                    echo"<td>";
+                        echo $fila[0];
+                    echo"</td>";
+                    echo"<td>";
+                        echo $fila[2];
+                    echo"</td>";
+                    echo"<td>";
+                        echo $fila[3];
+                    echo"</td>";
+                    echo"<td>";
+                        echo $fila[4];
+                    echo"</td>";
+                    echo"<td>";
+                        echo $fila[5];
+                    echo"</td>";
+                    echo"<td>";
+                        echo $fila[6];
+                    echo"</td>";
+                echo"</tr>";
+
+
+
+            //echo $fila[0] . " - " . $fila[2] . " - " . $fila[3] . " - " . $fila[4] . " - " . $fila[5] . " - " . $fila[6]. "<br>";
+            }
+
+
             echo"<tr>";
                 echo"<td>";
-                echo"hola";
+                
                 echo"</td>";
             echo"</tr>";
+            
         echo"</table>";
 
         //Buena práctica de programación cerrar la conexión con la mysqli_close()
