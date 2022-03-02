@@ -79,11 +79,14 @@
         echo "<br>" . "El número de alumnos es: " . $num_reg;
         //Buena practica programación --> Borrar la consulta
         $alumno->free();
-
+        echo"<table>";
+        echo"</table>";
 
         //Buena práctica de programación cerrar la conexión con la mysqli_close()
         mysqli_close($conn);
         ?>
+        
+
         <form method="post" action="index.html">
             </br>
             <input type="submit" value="Volver inicio">
