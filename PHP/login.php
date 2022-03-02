@@ -54,7 +54,7 @@
        if (!$conn) {
            die("La conexión falló: " . mysqli_connect_error());
        } else {
-           echo "Tu ID es:";
+           echo "Tu ID es: " . $nombre;
        }
 
        echo "<br>";
