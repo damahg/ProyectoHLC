@@ -43,6 +43,7 @@
         $apellido2 = filter_input(INPUT_POST, "nuevoSegundoApellido");
         $curso = filter_input(INPUT_POST, "curso");
         $nota = filter_input(INPUT_POST, "nuevaNota");
+        $id = filter_input(INPUT_POST, "idAlumno");
         
         //Servidor
         $servername = "localhost";
