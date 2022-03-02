@@ -37,12 +37,7 @@
     <div id="indexPrincipal">
         <?php
         //Datos
-        $IDProfesor= filter_input(INPUT_POST, "IDProfesor");
-        $nombre = filter_input(INPUT_POST, "nombre");
-        $apellido1 = filter_input(INPUT_POST, "apellido1");
-        $apellido2 = filter_input(INPUT_POST, "apellido2");
-        $curso = filter_input(INPUT_POST, "curso");
-        $nota = filter_input(INPUT_POST, "nota");
+        $IDAlumno= filter_input(INPUT_POST, "IDAlumno");
         
         //Servidor
         $servername = "localhost";
@@ -62,7 +57,7 @@
        
         echo "<br>";
         
-        $sql = "DELETE FROM alumno WHERE nombre = '$nombre' AND apellido1Alumno = '$apellido1' AND apellido2Alumno = '$apellido2'";
+        $sql = "DELETE FROM alumno WHERE IDAlumno = '$IDAlumno'";
         
                 
         if(mysqli_query($conn, $sql)){
