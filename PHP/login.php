@@ -37,66 +37,48 @@
     <div id="indexPrincipal">
         <?php
         //Datos
-        $IDProfesor= filter_input(INPUT_POST, "usuario");
+        $nombre= filter_input(INPUT_POST, "nombre");
+        $pass = filter_input(INPUT_POST,"pass");
+
         
-        //Servidor
-        $servername = "localhost";
-        //Nombre de la base de datos
-        $database = "webNotas";
-        //Credenciales de la base de datos
-        $username = "franvilla";
-        $password = "franvilla10";
-        //Conexion con la base de datos --> mysqli
-        $conn = mysqli_connect($servername, $username, $password, $database);
-        //Comprobacion de la conexion
-        if (!$conn) {
-            die ("La conexión falló: " .mysqli_connect_error());
-        }
-        if (!empty($nombre)) {
-            $sql = "UPDATE alumno SET nombreAlumno='$nombre' WHERE IDAlumno='$IDAlumno'";
-            
-            if (mysqli_query($conn, $sql)) {
-              echo "Nombre modificado".'<br>';
-            } else {
-              echo "Error al realizar la modificación del nombre: " . mysqli_error($conn).'<br>';
-            }
-          } 
-          if (!empty($apellido1)) {
-            $sql = "UPDATE alumno SET apellido1Alumno='$apellido1' WHERE IDAlumno='$IDAlumno'";
-            
-            if (mysqli_query($conn, $sql)) {
-              echo "Apellido modificado".'<br>';
-            } else {
-              echo "Error al realizar la modificación del apellido: " . mysqli_error($conn).'<br>';
-            }
-          }
-          if (!empty($apellido2)) {
-            $sql = "UPDATE alumno SET apellido2Alumno='$apellido2' WHERE IDAlumno='$IDAlumno'";
-            
-            if (mysqli_query($conn, $sql)) {
-              echo "Apellido modificado".'<br>';
-            } else {
-              echo "Error al realizar la modificación del apellido: " . mysqli_error($conn).'<br>';
-            }
-          } 
-          if (!empty($curso)) {
-            $sql = "UPDATE alumno SET curso='$curso' WHERE IDAlumno='$IDAlumno'";
-            if (mysqli_query($conn, $sql)) {
-              echo "Asignatura modificados".'<br>';
-            } else {
-              echo "Error al realizar la modificación de la asignatura: " . mysqli_error($conn).'<br>';
-            }
-          } 
-          if (!empty($nota)) {
-            $sql = "UPDATE alumno SET nota='$nota' WHERE IDAlumno='$IDAlumno'";
-            if (mysqli_query($conn, $sql)) {
-              echo "Nota modificada".'<br>';
-            } else {
-              echo "Error al realizar la modificación de la nota: " . mysqli_error($conn);
-            }
-          } 
-        mysqli_close($conn);
-        ?>
+       //Servidor
+       $servername = "localhost";
+       //Nombre de la base de datos
+       $database = "webNotas";
+       //Credenciales de la base de datos
+       $username = "franvilla";
+       $password = "franvilla10";
+       //Conexion con la base de datos --> mysqli
+       $conn = mysqli_connect($servername, $username, $password, $database);
+       //Comprobacion de la conexion
+       if (!$conn) {
+           die("La conexión falló: " . mysqli_connect_error());
+       } else {
+           echo "Tu ID es:";
+       }
+
+       echo "<br>";
+       //Introducción base de datos
+       $consulta = "SELECT nombre=$nombre FROM profesor ";
+       $alumno = $conn->query($consulta);
+       $num_reg = $alumno->num_rows;
+
+       while ($fila = $alumno->fetch_array()) {
+       echo $fila[0];
+       }
+  
+       echo "<br>" . "El número de alumnos es: " . $num_reg;
+       //Buena practica programación --> Borrar la consulta          
+        $alumno->free();
+       //Buena práctica de programación cerrar la conexión con la mysqli_close()
+       mysqli_close($conn);
+       ?>
+       
+
+       <form method="post" action="../index.html">
+           </br>
+           <input type="submit" value="Volver inicio">
+       </form>
     </div>
 </body>
 </html>
