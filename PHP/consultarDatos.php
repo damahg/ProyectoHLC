@@ -39,75 +39,50 @@
 
     <!--Formulario para consultar los datos, insertar, etc.-->
     <div id="indexPrincipal">
-        <table>
-            <h1>DATOS ALUMNOS REGISTRADOS</h1>
-            <tr>
-                <th>NÚMERO ALUMNO</th>
-                <th>NUMERO PROFESOR</th>
-                <th>NOMBRE</th>
-                <th>APELLIDOS</th>
-                <th>ESTUDIOS </th>
-                <th>NOTAS</th>
-            </tr>
-            <?php
-            //Servidor
-            $servername = "localhost";
-            //Nombre de la base de datos
-            $database = "webNotas";
-            //Credenciales de la base de datos
-            $username = "franvilla";
-            $password = "franvilla10";
-            //Conexion con la base de datos --> mysqli
-            $conn = mysqli_connect($servername, $username, $password, $database);
-            //Comprobacion de la conexion
-            if (!$conn) {
-                die("La conexión falló: " . mysqli_connect_error());
-            } else {
-                 // Sacamos todos los datos almacenados en la base de datos
-            $consulta = "SELECT * FROM alumno";
-            // se llama a la funcion query() para pasarle los datos de la base de datos y realizar la consulta
-            $alumnos = $conexion->query($consulta);
-            // nos devuelve el numero de filas que contiene
-            $numeroRegistros = $alumnos->num_rows;
-            // va guardando los indices numericos de cada alumno y los guarda el $fila que luego vamos a ir mostrando
-            while ($fila = $alumnos->fetch_array()) {
-                echo"<tr>";
-                    echo"<td>";
-                        echo $fila[0];
-                    echo" </td>";
-                    <td>
-                        echo $fila[1];
-                    </td>
-                    <td>
-                        echo $fila[2];
-                    </td>
-                    <td>
-                        echo $fila[3];
-                    </td>
-                    <td>
-                    echo $fila[4];
-                    </td>
-                    echo $fila[5];
-                    </td>
-                    <td>
-                    echo $fila[6];
-                    </td>
-                echo"</tr>";
-            }
-            ?>
-        </table>
         <?php
+        //Datos
+        $IDProfesor = filter_input(INPUT_POST, "IDProfesor");
+        $nombre = filter_input(INPUT_POST, "nombre");
+        $apellido1 = filter_input(INPUT_POST, "apellido1");
+        $apellido2 = filter_input(INPUT_POST, "apellido2");
+        $curso = filter_input(INPUT_POST, "curso");
+        $nota = filter_input(INPUT_POST, "nota");
 
-            }
-           
-        echo "</br>";
-        echo "</br>";
-        echo "Número de alumnos registrados: " . $numeroRegistros;
-        // limpia los datos para que no sigan almacenados una  vez que ya no sirvan
-        $alumnos->free();
+        //Servidor
+        $servername = "localhost";
+        //Nombre de la base de datos
+        $database = "webNotas";
+        //Credenciales de la base de datos
+        $username = "franvilla";
+        $password = "franvilla10";
+        //Conexion con la base de datos --> mysqli
+        $conn = mysqli_connect($servername, $username, $password, $database);
+        //Comprobacion de la conexion
+        if (!$conn) {
+            die("La conexión falló: " . mysqli_connect_error());
+        } else {
+            echo "Conectado correctamente";
+        }
 
-        // cerramos conexión con la base de datos
-        mysqli_close($conexion);
+        echo "<br>";
+        //Introducción base de datos
+        $consulta = "SELECT * FROM alumno ";
+        $alumno = $conn->query($consulta);
+        $num_reg = $alumno->num_rows;
+
+        echo "Numero de alumno -" . "- Nombre -" . "- Apellido1 -". "- Apellido2 -". "- Estudios -" . "- Nota " . "<br>";
+        echo "<br>";
+        while ($fila = $alumno->fetch_array()) {
+
+            echo $fila[0] . " - " . $fila[2] . " - " . $fila[3] . " - " . $fila[4] . " - " . $fila[5] . " - " . $fila[6]. "<br>";
+        }
+        echo "<br>" . "El número de alumnos es: " . $num_reg;
+        //Buena practica programación --> Borrar la consulta
+        $alumno->free();
+
+
+        //Buena práctica de programación cerrar la conexión con la mysqli_close()
+        mysqli_close($conn);
         ?>
         <form method="post" action="index.html">
             </br>
