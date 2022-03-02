@@ -97,7 +97,9 @@
                     echo $fila[5];
 
                     </td>
+                    <td>
 
+                    echo $fila[6];
 
                     </td>
                 </tr>
