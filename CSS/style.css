@@ -100,6 +100,10 @@ body{
     text-decoration: none;
 }
 
+#indexPrincipal table{
+    text-align: center;
+}
+
 #indexEditar{
     background-color: #666666;
     margin-top: 100px;

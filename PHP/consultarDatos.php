@@ -98,12 +98,12 @@
                     echo"</td>";
                 echo"</tr>";
                 echo"<br/>";
-
+            
 
 
             //echo $fila[0] . " - " . $fila[2] . " - " . $fila[3] . " - " . $fila[4] . " - " . $fila[5] . " - " . $fila[6]. "<br>";
             }
-
+        echo"<table>";
         
          $alumno->free();
         //Buena práctica de programación cerrar la conexión con la mysqli_close()
