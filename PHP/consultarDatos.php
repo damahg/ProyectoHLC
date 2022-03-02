@@ -61,7 +61,7 @@
         if (!$conn) {
             die("La conexión falló: " . mysqli_connect_error());
         } else {
-            echo "Conectado correctamente";
+            echo "Tus alumnos son: ";
         }
 
         echo "<br>";
@@ -71,40 +71,11 @@
         $num_reg = $alumno->num_rows;
 
         while ($fila = $alumno->fetch_array()) {
-            echo"<tr>";
-                echo"<td>";
-                    echo $fila[0];
-                echo"</td>";
-                echo"<td>";
-                    echo $fila[2];
-                echo"</td>";
-                echo"<td>";
-                    echo $fila[3];
-                echo"</td>";
-                echo"<td>";
-                    echo $fila[4];
-                echo"</td>";
-                echo"<td>";
-                    echo $fila[5];
-                echo"</td>";
-                echo"<td>";
-                    echo $fila[6];
-                echo"</td>";
-            echo"</tr>";
-            echo"<br/>";
-        
-
-
-        //echo $fila[0] . " - " . $fila[2] . " - " . $fila[3] . " - " . $fila[4] . " - " . $fila[5] . " - " . $fila[6]. "<br>";
+        echo "Nombre y apellidos: " . $fila[2] . " " . $fila[3] . " " . $fila[4] . " Asignatura: " . $fila[5] . " Nota: " . $fila[6]. "<br>";
         }
-    echo"<table>";
+   
         echo "<br>" . "El número de alumnos es: " . $num_reg;
-        //Buena practica programación --> Borrar la consulta
-        echo"<table>";
-           // echo "Numero de alumno -" . "- Nombre -" . "- Apellido1 -". "- Apellido2 -". "- Estudios -" . "- Nota " . "<br>";
-           // echo "<br>";
-           
-        
+        //Buena practica programación --> Borrar la consulta          
          $alumno->free();
         //Buena práctica de programación cerrar la conexión con la mysqli_close()
         mysqli_close($conn);
