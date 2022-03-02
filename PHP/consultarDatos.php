@@ -73,37 +73,32 @@
             while ($fila = $alumnos->fetch_array()) {
                 <tr>
                     <td>
-                        <?php
                         echo $fila[0];
-                        ?>
                     </td>
                     <td>
-                        <?php
                         echo $fila[1];
-                        ?>
                     </td>
                     <td>
-                        <?php
+
                         echo $fila[2];
-                        ?>
+
                     </td>
                     <td>
-                        <?php
+
                         echo $fila[3];
-                        ?>
+
                     </td>
                     <td>
-                    <?php
+
                     echo $fila[4];
-                    ?>
+
                     </td>
-                    <?php
+
                     echo $fila[5];
-                    ?>
+
                     </td>
-                    <?php
-                    echo $fila[6];
-                    ?>
+
+
                     </td>
                 </tr>
             }
