@@ -10,7 +10,7 @@
     <!--Logo y cambiar a modo claro / oscuro-->
     <div id="generalArriba">
         <div class="logo">
-            <a href="index.html"> <h3>Mark-Edit</h3> </a>
+            <a href="../index.html"> <h3>Mark-Edit</h3> </a>
         </div>
         <div class="login">
             <a href="login.html">Login</a>
