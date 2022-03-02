@@ -35,47 +35,85 @@
 
     <!--Formulario para consultar los datos, insertar, etc.-->
     <div id="indexPrincipal">
-        
+    <table>
+            <h1>DATOS ALUMNOS REGISTRADOS</h1>
+            <tr>
+                <th>NÚMERO</th>
+                <th>NOMBRE</th>
+                <th>APELLIDOS</th>
+                <th>ESTUDIOS </th>
+                <th>NOTAS</th>
+            </tr>
+            <?php
+            // Conectamos con la base de datos
+            $servername = "localhost";
 
-        <textarea name="" id="" cols="30" rows="10">
-        <?php
-        //Datos
-        $IDProfesor= filter_input(INPUT_POST, "IDProfesor");
-        $nombre = filter_input(INPUT_POST, "nombre");
-        $apellido1 = filter_input(INPUT_POST, "apellido1");
-        $apellido2 = filter_input(INPUT_POST, "apellido2");
-        $curso = filter_input(INPUT_POST, "curso");
-        $nota = filter_input(INPUT_POST, "nota");
-        
-        //Servidor
-        $servername = "localhost";
-        //Nombre de la base de datos
-        $database = "webNotas";
-        //Credenciales de la base de datos
-        $username = "franvilla";
-        $password = "franvilla10";
-        //Conexion con la base de datos --> mysqli
-        $conn = mysqli_connect($servername, $username, $password, $database);
-        //Comprobacion de la conexion
-        if (!$conn) {
-            die ("La conexión falló: " .mysqli_connect_error());
-        }else{
-            echo "Conectado correctamente";
+            $database = "datos_curso_21/22";
+
+            $username = "irene";
+            $password = "1R3n3_2@*()";
+
+            // establecemos la conexión con la base de datos
+            $conexion = mysqli_connect($servername, $username, $password, $database);
+
+            // comprobamos que la conexión se ha realizado con éxito
+            if (!$conexion) {
+                die("La conexión falló" . mysqli_connect_error());
+            } else {
+                // Sacamos todos los datos almacenados en la base de datos
+                $consulta = "SELECT * FROM alumno";
+                // se llama a la funcion query() para pasarle los datos de la base de datos y realizar la consulta
+                $alumnos = $conexion->query($consulta);
+                // nos devuelve el numero de filas que contiene
+                $numeroRegistros = $alumnos->num_rows;
+
+                // va guardando los indices numericos de cada alumno y los guarda el $fila que luego vamos a ir mostrando
+                while ($fila = $alumnos->fetch_array()) {
+                    ?>
+
+                    <tr>
+                        <td>
+                            <?php
+                            echo $fila[0];
+                            ?>
+                        </td>
+                        <td>
+                            <?php
+                            echo $fila[1];
+                            ?>
+                        </td>
+                        <td>
+                            <?php
+                            echo $fila[2];
+                            ?>
+                        </td>
+                        <td>
+                            <?php
+                            echo $fila[3];
+                            ?>
+                        </td>
+                        <td>
+                            <?php
+                            echo $fila[4];
+                        }
+                        ?>
+                    </td>
+                </tr>
+            </table>
+            <?php
+            echo "</br>";
+            echo "</br>";
+            echo "Número de alumnos registrados: " . $numeroRegistros;
+            // limpia los datos para que no sigan almacenados una  vez que ya no sirvan
+            $alumnos->free();
         }
-       
-        echo "<br>";
-        
-        $sql = "SELECT * FROM alumno";
-        $alumno = $conn->query($consulta);
-        $num_fil = $alumno->num_rows;
-        
-        while ($fila = $alumno->fetch_array()){
-            echo $fila[0] . " - " . $fila[1] .  " - " . $fila[2] . " - " . $fila[3] . " - " . $fila[4] . "<br>";
-        }
-        $alumno -> free();
-        mysqli_close($conn);
+        // cerramos conexión con la base de datos
+        mysqli_close($conexion);
         ?>
-        </textarea>
+        <form method="post" action="index.html">
+            </br>
+            <input type="submit" value="Volver inicio">
+        </form>
     </div>
 </body>
 </html>
