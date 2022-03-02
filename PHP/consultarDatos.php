@@ -71,38 +71,28 @@
             $numeroRegistros = $alumnos->num_rows;
             // va guardando los indices numericos de cada alumno y los guarda el $fila que luego vamos a ir mostrando
             while ($fila = $alumnos->fetch_array()) {
-                <tr>
-                    <td>
+                echo"<tr>";
+                    echo"<td>";
                         echo $fila[0];
-                    </td>
+                    echo" </td>";
                     <td>
                         echo $fila[1];
                     </td>
                     <td>
-
                         echo $fila[2];
-
                     </td>
                     <td>
-
                         echo $fila[3];
-
                     </td>
                     <td>
-
                     echo $fila[4];
-
                     </td>
-
                     echo $fila[5];
-
                     </td>
                     <td>
-
                     echo $fila[6];
-
                     </td>
-                </tr>
+                echo"</tr>";
             }
             ?>
         </table>
