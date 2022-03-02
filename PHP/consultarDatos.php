@@ -48,10 +48,10 @@
             // Conectamos con la base de datos
             $servername = "localhost";
 
-            $database = "datos_curso_21/22";
+            $database = "";
 
-            $username = "irene";
-            $password = "1R3n3_2@*()";
+            $username = "";
+            $password = "";
 
             // establecemos la conexión con la base de datos
             $conexion = mysqli_connect($servername, $username, $password, $database);
